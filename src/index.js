@@ -15,22 +15,22 @@ import { reactReduxFirebase, firebaseReducer } from 'react-redux-firebase';
 import 'typeface-roboto';
 
 import './index.css';
-import plannerApp from './reducers';
+import app from './reducers';
 import registerServiceWorker from './registerServiceWorker';
 import Routes from './Routes';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyCE2Ko9lTeyotNpf-mZ4cH7WCoTP7faVYc',
-  authDomain: 'boiling-fire-3060.firebaseapp.com',
-  databaseURL: 'https://boiling-fire-3060.firebaseio.com',
-  projectId: 'firebase-boiling-fire-3060',
-  storageBucket: 'firebase-boiling-fire-3060.appspot.com',
-  messagingSenderId: '372841444977'
+  apiKey: 'AIzaSyA-InvnhvUaS7UzHoBQOwpbon5DiNMEcTs',
+  authDomain: 'coloc-manager.firebaseapp.com',
+  databaseURL: 'https://coloc-manager.firebaseio.com',
+  projectId: 'coloc-manager',
+  storageBucket: 'coloc-manager.appspot.com',
+  messagingSenderId: '3636953393'
 };
 
 const reduxFirebaseConfig = {
   userProfile: 'users', // where profiles are stored in database
-  presence: 'fcknye-planner/presence', // where list of online users is stored in database
+  presence: 'presence', // where list of online users is stored in database
   sessions: false
 };
 
@@ -54,7 +54,7 @@ const createStoreWithFirebase = compose(...composers)(createStore);
 
 const rootReducer = combineReducers({
   firebase: firebaseReducer,
-  plannerApp,
+  app,
   routing: routerReducer
 });
 const initialState = {};
@@ -67,7 +67,7 @@ if (process.env.NODE_ENV !== 'production') {
     module.hot.accept('./reducers', () => {
       store.replaceReducer(combineReducers({
         firebase: firebaseReducer,
-        plannerApp,
+        app,
         routing: routerReducer
       }));
     });

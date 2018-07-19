@@ -5,4 +5,4 @@ const admin = require('firebase-admin');
 
 admin.initializeApp(functions.config().firebase);
 
-exports.databaseEvents = require('./database/events');
+// exports.databaseEvents = require('./database/events');
